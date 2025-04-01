@@ -8,8 +8,12 @@ import EquipmentsList from "../Components/EquipmentsList";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: <Layouts></Layouts>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
       {
         path: "/all",
         element: <AllEquipments></AllEquipments>,
