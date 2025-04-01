@@ -6,11 +6,13 @@ import AddEquipments from "../Pages/AddEquipments";
 import EquipmentsList from "../Pages/EquipmentsList";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import ErrorPage from "../Components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layouts></Layouts>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
