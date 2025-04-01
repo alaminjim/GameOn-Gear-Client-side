@@ -1,7 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/Game On.png";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const NavBar = () => {
+  const { user, userSignOut } = useContext(AuthContext);
+
+  const handelSignOut = () => [
+    userSignOut()
+      .then(() => {
+        toast.success("log out Successful..!");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      }),
+  ];
+
   return (
     <div>
       <div className="w-full h-[54px] bg-[#B5BE2D] hidden md:hidden lg:block">
@@ -66,7 +81,7 @@ const NavBar = () => {
               src={logo}
             />
             <a className=" lg:text-xl text-[#B5BE2D] font-bold">
-              GameOn _<a className="text-black">Gear</a>
+              GameOn _<span className="text-black">Gear</span>
             </a>
           </div>
         </div>
@@ -99,9 +114,33 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login" className="btn">
-            Log in
-          </Link>
+          {user && user?.email ? (
+            <div className="flex justify-center items-center space-x-1.5">
+              <img
+                className="w-8 h-8 rounded-full"
+                title={user?.displayName}
+                src={user?.photoURL}
+              />
+              <button
+                onClick={handelSignOut}
+                className="btn text-white bg-[#B5BE2D]"
+              >
+                Log out
+              </button>
+            </div>
+          ) : (
+            <div className="space-x-1.5">
+              <Link to="/login" className="btn bg-[#B5BE2D] text-white">
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="btn text-[#B5BE2D]  hover:bg-[#B5BE2D] hover:text-white"
+              >
+                Register
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

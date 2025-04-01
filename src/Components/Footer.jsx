@@ -89,7 +89,10 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-        <p className="text-white"> @2024 GAMEoN_GEAR. All Rights Reserved.</p>
+        <p className="text-center text-white">
+          Copyright © {new Date().getFullYear()} - All right reserved by
+          GAMEoN_GEAR
+        </p>
       </div>
     </div>
   );
