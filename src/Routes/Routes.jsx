@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layouts from "../Layouts/Layouts";
-import Home from "../Components/Home";
-import AllEquipments from "../Components/AllEquipments";
-import AddEquipments from "../Components/AddEquipments";
-import EquipmentsList from "../Components/EquipmentsList";
+import Home from "../Pages/Home";
+import AllEquipments from "../Pages/AllEquipments";
+import AddEquipments from "../Pages/AddEquipments";
+import EquipmentsList from "../Pages/EquipmentsList";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
         element: <EquipmentsList></EquipmentsList>,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
   },
 ]);
 

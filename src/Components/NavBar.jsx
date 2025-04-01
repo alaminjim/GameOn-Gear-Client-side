@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/Game On.png";
 
 const NavBar = () => {
@@ -71,7 +71,7 @@ const NavBar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-5 *:text-xs">
+          <ul className="menu menu-horizontal px-1 gap-5">
             <NavLink
               className={({ isActive }) => (isActive ? "text-[#B5BE2D]" : "")}
               to="/"
@@ -99,7 +99,9 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Log in</a>
+          <Link to="/login" className="btn">
+            Log in
+          </Link>
         </div>
       </div>
     </div>
