@@ -15,12 +15,15 @@ const provider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const creteLogin = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -29,16 +32,19 @@ const AuthProvider = ({ children }) => {
   };
 
   const userSignOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
   const createGoogleUser = () => {
+    setLoading(true);
     return signInWithPopup(auth, provider);
   };
 
   useEffect(() => {
     const disconnect = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       disconnect();
@@ -47,6 +53,7 @@ const AuthProvider = ({ children }) => {
 
   const userInfo = {
     user,
+    loading,
     setUser,
     createUser,
     creteLogin,
