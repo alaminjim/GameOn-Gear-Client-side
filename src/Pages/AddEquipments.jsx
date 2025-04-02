@@ -67,7 +67,7 @@ const AddEquipments = () => {
           ADD MORE SPORTS EQUIPMENTS IN YOUR SHOP...!
         </h1>
         <form onSubmit={handelAdd}>
-          <div className="ml-46 text-lg font-semibold mt-5 text-gray-500">
+          <div className="lg:ml-46 text-lg font-semibold mt-5 text-gray-500">
             {user?.displayName && (
               <p
                 value={userName}

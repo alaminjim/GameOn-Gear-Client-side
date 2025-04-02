@@ -48,9 +48,12 @@ const AllCards = ({ item, setEquipment, equipment }) => {
   return (
     <div>
       <div className="bg-[#b4be2d43] my-10">
-        <div className="flex">
-          <img src={image} className="max-w-sm rounded-lg m-5 shadow-xl" />
-          <div className="pt-8 space-y-2">
+        <div className="lg:flex">
+          <img
+            src={image}
+            className="lg:max-w-sm rounded-lg   lg:m-5 mr-1.5 shadow-xl"
+          />
+          <div className="pt-8 pl-2 space-y-2">
             <h2 className="card-title font-bold text-2xl text-[#B5BE2D]">
               {itemName}
             </h2>
@@ -77,7 +80,7 @@ const AllCards = ({ item, setEquipment, equipment }) => {
             </p>
             <div className="space-x-3">
               <Link to={`/update/${_id}`}>
-                <button className="w-[95px]  h-10 text-[#B5BE2D] font-bold border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
+                <button className="w-[95px]  h-10 mb-6  text-[#B5BE2D] font-bold border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
                   Update
                 </button>
               </Link>

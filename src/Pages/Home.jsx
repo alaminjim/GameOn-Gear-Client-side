@@ -19,13 +19,15 @@ const Home = () => {
           badminton, basketball, and more! Get <br></br>high-quality gear at the
           best prices to enhance your game.
         </p>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8 lg:ml-0 ml-6">
           {equipmentData.map((item) => (
             <Card key={item._id} item={item}></Card>
           ))}
         </div>
         <Link to="/all">
-          <button className="btn bg-[#B5BE2D] my-5 text-white">View All</button>
+          <button className="btn bg-[#B5BE2D] ml-6 lg:ml-0 my-5 text-white">
+            View All
+          </button>
         </Link>
       </section>
     </div>
