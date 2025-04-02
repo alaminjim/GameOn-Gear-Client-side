@@ -3,12 +3,50 @@ import { IoIosPricetags } from "react-icons/io";
 import { CiStar } from "react-icons/ci";
 import { SiStockx } from "react-icons/si";
 import { CiTimer } from "react-icons/ci";
+import Swal from "sweetalert2";
 
-const AllCards = ({ item }) => {
-  const { itemName, image, description, price, rating, stock, time } = item;
+const AllCards = ({ item, setEquipment, equipment }) => {
+  const { itemName, image, description, price, rating, stock, time, _id } =
+    item;
+
+  const handelDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/equipment/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+
+              const remaining = equipment.filter(
+                (deleteOne) => deleteOne._id !== _id
+              );
+              setEquipment(remaining);
+            }
+          });
+      }
+    });
+  };
+
   return (
     <div>
-      <div className="bg-[#b4be2d43]">
+      <div className="bg-[#b4be2d43] my-10">
         <div className="flex">
           <img src={image} className="max-w-sm rounded-lg m-5 shadow-xl" />
           <div className="pt-8 space-y-2">
@@ -40,7 +78,10 @@ const AllCards = ({ item }) => {
               <button className="w-[95px]  h-10 text-[#B5BE2D] font-bold border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
                 Update
               </button>
-              <button className="w-[95px]  h-10 text-red-300 font-bold border-2 border-red-300 hover:bg-red-300 hover:text-white rounded-full">
+              <button
+                onClick={() => handelDelete(_id)}
+                className="w-[95px]  h-10 text-red-300 font-bold border-2 border-red-300 hover:bg-red-300 hover:text-white rounded-full"
+              >
                 Delete
               </button>
             </div>
