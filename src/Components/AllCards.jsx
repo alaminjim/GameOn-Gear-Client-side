@@ -31,7 +31,7 @@ const AllCards = ({ item, setEquipment, equipment }) => {
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
-                text: "Your file has been deleted.",
+                text: "Your Data has been deleted.",
                 icon: "success",
               });
 
@@ -63,15 +63,15 @@ const AllCards = ({ item, setEquipment, equipment }) => {
             </p>
 
             <p className="flex gap-1.5 font-extrabold text-gray-500">
-              <IoIosPricetags className="w-4 h-4 mt-0.5"></IoIosPricetags>{" "}
-              {price}$
+              <IoIosPricetags className="w-4 h-4 mt-1"></IoIosPricetags> {price}
+              $
             </p>
             <p className="font-extrabold text-gray-500 flex gap-1.5">
-              <SiStockx className="w-4 h-4 mt-0.5"></SiStockx>
+              <SiStockx className="w-4 h-4 mt-1"></SiStockx>
               {stock}
             </p>
             <p className="font-extrabold text-gray-500 flex gap-1">
-              <CiTimer className="w-4 h-4 mt-0.5"></CiTimer>
+              <CiTimer className="w-4 h-4 mt-1"></CiTimer>
               {time}
             </p>
             <p className="flex gap-1 font-extrabold text-gray-500">

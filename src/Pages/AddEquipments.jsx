@@ -51,7 +51,7 @@ const AddEquipments = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "Do you want to continue",
+            text: "Data added successfully..!",
             icon: "success",
             confirmButtonText: "Cool",
           });
