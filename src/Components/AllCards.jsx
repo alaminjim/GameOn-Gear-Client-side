@@ -4,6 +4,7 @@ import { CiStar } from "react-icons/ci";
 import { SiStockx } from "react-icons/si";
 import { CiTimer } from "react-icons/ci";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const AllCards = ({ item, setEquipment, equipment }) => {
   const { itemName, image, description, price, rating, stock, time, _id } =
@@ -75,9 +76,11 @@ const AllCards = ({ item, setEquipment, equipment }) => {
               {rating}
             </p>
             <div className="space-x-3">
-              <button className="w-[95px]  h-10 text-[#B5BE2D] font-bold border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
-                Update
-              </button>
+              <Link to={`/update/${_id}`}>
+                <button className="w-[95px]  h-10 text-[#B5BE2D] font-bold border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
+                  Update
+                </button>
+              </Link>
               <button
                 onClick={() => handelDelete(_id)}
                 className="w-[95px]  h-10 text-red-300 font-bold border-2 border-red-300 hover:bg-red-300 hover:text-white rounded-full"

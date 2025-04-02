@@ -7,6 +7,7 @@ import EquipmentsList from "../Pages/EquipmentsList";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ErrorPage from "../Components/ErrorPage";
+import UpdateEquipments from "../Pages/UpdateEquipments";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,12 @@ const router = createBrowserRouter([
       {
         path: "/list",
         element: <EquipmentsList></EquipmentsList>,
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateEquipments></UpdateEquipments>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/equipments/${params.id}`),
       },
     ],
   },
