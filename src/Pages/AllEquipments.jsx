@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Card from "../Components/Card";
 import AllCards from "../Components/AllCards";
 import { useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AllEquipments = () => {
   const equipmentDataS = useLoaderData();

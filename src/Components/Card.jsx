@@ -3,9 +3,11 @@ import { IoIosPricetags } from "react-icons/io";
 import { CiStar } from "react-icons/ci";
 import { SiStockx } from "react-icons/si";
 import { CiTimer } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Card = ({ item }) => {
-  const { itemName, image, description, price, rating, stock, time } = item;
+  const { itemName, image, description, price, rating, stock, time, _id } =
+    item;
 
   return (
     <div>
@@ -40,6 +42,11 @@ const Card = ({ item }) => {
             <CiStar className="w-5 h-5"></CiStar>
             {rating}
           </p>
+          <Link to={`/update/${_id}`}>
+            <button className="w-[110px]  h-10 mb-6  text-[#B5BE2D] font-bold border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

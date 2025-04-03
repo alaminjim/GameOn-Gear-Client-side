@@ -9,6 +9,7 @@ import Register from "../Pages/Register";
 import ErrorPage from "../Components/ErrorPage";
 import UpdateEquipments from "../Pages/UpdateEquipments";
 import ViewDetails from "../Pages/ViewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,22 +29,38 @@ const router = createBrowserRouter([
       },
       {
         path: "/add",
-        element: <AddEquipments></AddEquipments>,
+        element: (
+          <PrivateRoute>
+            <AddEquipments></AddEquipments>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/list",
-        element: <EquipmentsList></EquipmentsList>,
+        element: (
+          <PrivateRoute>
+            <EquipmentsList></EquipmentsList>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/equipments"),
       },
       {
         path: "/update/:id",
-        element: <UpdateEquipments></UpdateEquipments>,
+        element: (
+          <PrivateRoute>
+            <UpdateEquipments></UpdateEquipments>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/equipments/${params.id}`),
       },
       {
         path: "/details/:id",
-        element: <ViewDetails></ViewDetails>,
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/equipments/${params.id}`),
       },
