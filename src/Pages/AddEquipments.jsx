@@ -39,7 +39,7 @@ const AddEquipments = () => {
       userEmail,
     };
 
-    fetch("http://localhost:5000/equipment", {
+    fetch("https://game-on-gear-server.vercel.app/equipment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -48,8 +48,6 @@ const AddEquipments = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",

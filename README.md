@@ -2,7 +2,7 @@ GAMEoN_GEAR
 
 Live Site URL:
 
-[Provide Your Live Site URL Here]
+https://quiet-belekoy-ad3587.netlify.app
 
 Features:
 

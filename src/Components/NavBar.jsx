@@ -47,7 +47,7 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-y-1.5 *:text-xs"
+              className="menu menu-sm font-bold text-gray-600 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-y-1.5 *:text-xs"
             >
               <NavLink
                 className={({ isActive }) => (isActive ? "text-[#B5BE2D]" : "")}
@@ -85,7 +85,7 @@ const NavBar = () => {
             </a>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden font-bold text-gray-600 lg:flex">
           <ul className="menu menu-horizontal px-1 gap-5">
             <NavLink
               className={({ isActive }) => (isActive ? "text-[#B5BE2D]" : "")}

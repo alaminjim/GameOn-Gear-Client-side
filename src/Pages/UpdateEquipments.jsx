@@ -42,19 +42,18 @@ const UpdateEquipments = () => {
       userEmail,
     };
 
-    console.log(updateEquipment);
-
-    fetch(`http://localhost:5000/equipments/${updateLoader._id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateEquipment),
-    })
+    fetch(
+      `https://game-on-gear-server.vercel.app/equipments/${updateLoader._id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateEquipment),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",

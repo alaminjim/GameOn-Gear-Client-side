@@ -20,12 +20,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/equipment"),
+        loader: () => fetch("https://game-on-gear-server.vercel.app/equipment"),
       },
       {
         path: "/all",
         element: <AllEquipments></AllEquipments>,
-        loader: () => fetch("http://localhost:5000/equipments"),
+        loader: () =>
+          fetch("https://game-on-gear-server.vercel.app/equipments"),
       },
       {
         path: "/add",
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
             <EquipmentsList></EquipmentsList>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/equipments"),
+        loader: () =>
+          fetch("https://game-on-gear-server.vercel.app/equipments"),
       },
       {
         path: "/update/:id",
@@ -52,7 +54,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/equipments/${params.id}`),
+          fetch(
+            `https://game-on-gear-server.vercel.app/equipments/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
@@ -62,7 +66,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/equipments/${params.id}`),
+          fetch(
+            `https://game-on-gear-server.vercel.app/equipments/${params.id}`
+          ),
       },
     ],
   },
