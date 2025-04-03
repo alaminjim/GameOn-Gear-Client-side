@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const EquipmentsList = () => {
   const tableLoader = useLoaderData();
@@ -21,7 +21,7 @@ const EquipmentsList = () => {
               <tr>
                 <th>Serial</th>
                 <th>Name</th>
-                <th>Category</th>
+                <th className="hidden lg:block">Category</th>
                 <th>Price</th>
                 <th>View Details</th>
               </tr>
@@ -31,12 +31,14 @@ const EquipmentsList = () => {
                 <tr key={item._id} idx={index}>
                   <th>{index + 1}</th>
                   <td>{item.itemName}</td>
-                  <td>{item.category}</td>
+                  <td className="hidden lg:block">{item.category}</td>
                   <td>{item.price}$</td>
                   <td>
-                    <button className="w-[95px]  h-10 mb-6  text-[#B5BE2D] font-bold hover:border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
-                      Details
-                    </button>
+                    <Link to={`/details/${item._id}`}>
+                      <button className="w-[95px]  h-10 mb-6  text-[#B5BE2D] font-bold hover:border-2 border-[#B5BE2D] hover:bg-[#B5BE2D] hover:text-white rounded-full">
+                        Details
+                      </button>
+                    </Link>
                   </td>
                 </tr>
               ))}

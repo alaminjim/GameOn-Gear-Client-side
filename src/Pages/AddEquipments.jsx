@@ -22,6 +22,7 @@ const AddEquipments = () => {
     const rating = form.rating.value;
     const stock = form.stock.value;
     const time = form.time.value;
+    const title = form.title.value;
 
     const newEquipment = {
       itemName,
@@ -33,6 +34,7 @@ const AddEquipments = () => {
       stock,
       time,
       customization,
+      title,
       userName,
       userEmail,
     };
@@ -177,20 +179,31 @@ const AddEquipments = () => {
               />
             </div>
           </div>
-          <div className="space-y-1 mt-4 lg:ml-[179px]">
-            <label className="fieldset-label pl-1 font-bold">
-              Customization
-            </label>
-            <select
-              value={customization}
-              onChange={(e) => setCustomization(e.target.value)}
-              className="lg:w-[795px] h-[43px] w-full border-2 border-[#B5BE2D] px-3 rounded-xl focus:outline-none focus:border-gray-600"
-            >
-              <option value="extra-grip">Bat with Extra Grip</option>
-              <option value="hit-paper">Hit Paper</option>
-              <option value="custom-sticker">Custom Sticker</option>
-              <option value="engraving">Name Engraving</option>
-            </select>
+          <div className="lg:flex justify-center items-center space-y-2 gap-8 lg:mt-5">
+            <div className="space-y-1 pt-1.5">
+              <label className="fieldset-label pl-1 font-bold">Title</label>
+              <input
+                className="lg:w-[380px] w-full  h-[43px] rounded-xl border-2 border-[#B5BE2D] px-3  placeholder:font-semibold"
+                type="text"
+                name="title"
+                placeholder="title"
+              />
+            </div>
+            <div className="space-y-1">
+              <label className="fieldset-label pl-1 font-bold">
+                Customization
+              </label>
+              <select
+                value={customization}
+                onChange={(e) => setCustomization(e.target.value)}
+                className="lg:w-[380px] h-[43px] w-full border-2 border-[#B5BE2D] px-3 rounded-xl focus:outline-none focus:border-gray-600"
+              >
+                <option value="extra-grip">Bat with Extra Grip</option>
+                <option value="hit-paper">Hit Paper</option>
+                <option value="custom-sticker">Custom Sticker</option>
+                <option value="engraving">Name Engraving</option>
+              </select>
+            </div>
           </div>
 
           <button className="btn lg:w-[795px] lg:ml-[179px] w-full mb-8 mt-9 bg-[#B5BE2D] text-white">

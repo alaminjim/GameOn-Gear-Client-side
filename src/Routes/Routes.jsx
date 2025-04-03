@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ErrorPage from "../Components/ErrorPage";
 import UpdateEquipments from "../Pages/UpdateEquipments";
+import ViewDetails from "../Pages/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateEquipments></UpdateEquipments>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/equipments/${params.id}`),
+      },
+      {
+        path: "/details/:id",
+        element: <ViewDetails></ViewDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/equipments/${params.id}`),
       },
