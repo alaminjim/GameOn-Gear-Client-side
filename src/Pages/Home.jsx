@@ -29,7 +29,7 @@ const Home = () => {
           importantly after sales service is exceptional. If you are looking for
           longterm fitness equipment I highly recommend this store."
         </p>
-        <div className="flex justify-evenly pt-10">
+        <div className="lg:flex ml-28 lg:ml-0 md:flex space-y-2.5 justify-evenly pt-10">
           <img className="w-[150px] object-contain" src={ufc} alt="" />
           <img className="w-[200px] object-contain" src={adidas} alt="" />
           <img className="w-[200px] object-contain" src={suha} alt="" />
@@ -38,7 +38,7 @@ const Home = () => {
       </section>
       <section className="mt-20">
         <h1 className="text-center text-3xl font-semibold">
-          My shop's sports equipment{" "}
+          Shop's sports equipment{" "}
         </h1>
         <p className="text-center py-3 text-gray-500 font-bold">
           {" "}
@@ -61,20 +61,20 @@ const Home = () => {
         <h1 className="text-center text-3xl mt-18 font-semibold text-gray-500">
           Our Proud Clients
         </h1>
-        <p className="text-3xl font-semibold pt-8 text-[#B5BE2D]">
+        <p className="lg:text-3xl text-2xl font-semibold pt-8 text-[#B5BE2D]">
           GOVERNMENT SECTOR
         </p>
-        <div className="flex justify-evenly mt-10">
+        <div className="lg:flex md:flex md:mr-16 ml-28 lg:ml-0 space-y-3.5 justify-evenly mt-10">
           <img src={army} alt="" />
-          <img className="object-contain" src={police} alt="" />
-          <img className="object-contain" src={rab} alt="" />
-          <img className="object-contain" src={air} alt="" />
+          <img className="object-contain lg:ml-0 ml-10" src={police} alt="" />
+          <img className="object-contain lg:ml-0 ml-8" src={rab} alt="" />
+          <img className="object-contain lg:ml-0 ml-10" src={air} alt="" />
         </div>
         <p className="text-3xl font-semibold pt-8 text-[#B5BE2D]">
           GYM & SPORTS CLUB
         </p>
-        <div className="flex justify-evenly mt-10">
-          <img src={pic1} alt="" />
+        <div className="lg:flex md:flex md:mr-16 ml-36 lg:ml-0 space-y-5 justify-evenly mt-10">
+          <img className="object-contain" src={pic1} alt="" />
           <img className="object-contain" src={pic2} alt="" />
           <img className="object-contain" src={pic3} alt="" />
           <img className="object-contain" src={pic4} alt="" />

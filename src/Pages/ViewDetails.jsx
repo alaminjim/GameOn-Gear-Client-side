@@ -32,7 +32,10 @@ const ViewDetails = () => {
       </p>
       <div className="hero bg-[#b4be2d53] my-16  py-7 h-full">
         <div>
-          <img src={image} className="w-5xl ml-16 mt-5 rounded-lg shadow-xl" />
+          <img
+            src={image}
+            className="w-5xl lg:ml-16 mt-5 rounded-lg shadow-xl"
+          />
           <div className="space-y-2 pl-16">
             <h1 className="text-4xl pt-4 text-[#B5BE2D] font-bold">
               {itemName}
