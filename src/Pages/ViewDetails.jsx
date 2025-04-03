@@ -22,6 +22,7 @@ const ViewDetails = () => {
     customization,
     title,
   } = detailsLoader;
+
   return (
     <div>
       <h2 className="text-center text-2xl font-semibold pt-7 text-[#B5BE2D]">

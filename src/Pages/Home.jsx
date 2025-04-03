@@ -19,6 +19,7 @@ import racket from "../assets/istockphoto-858272962-612x612.jpg";
 
 const Home = () => {
   const equipmentData = useLoaderData();
+
   return (
     <div>
       <section className="mt-8">
